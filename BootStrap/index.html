@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Bootstrap And Javascript</title>
+  <meta charset="utf-8">
+  
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  
+  <style>
+    /* Styling for the header section */
+    #header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: gray;
+      color: black;
+      padding: 20px;
+    }
+  
+    #program-name {
+      flex: 1;
+    }
+    
+    #menu {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+  
+    #header h1 {
+      margin: 0;
+    }
+    
+    #content {
+      padding-top: 50px;
+      padding-bottom: 20px;
+      background-color: lightblue;
+      text-align: center;
+    }
+  
+    /* Styling for the button for the conversions */
+    .center-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    #btnConvert {
+      display: block;
+    }
+  
+    /* Styling for the footer section */
+    #footer {
+      background-color: gray;
+      color: black;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header">
+    <div id="program-name">
+      <h1>Computer Engineering Technology - Computing Science</h1>
+      <h2>Web Programming</h2>
+    </div>
+    <div id="menu">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="content">
+    <script type="text/javascript">
+      function convertLength() {
+        var unit = prompt("Select the length unit to convert to (inch/cm):");
+        var length = prompt("Enter the length to be converted to " + unit + ":");
+
+        // validating the input
+        if (isNaN(length)) {
+          alert("Invalid input. Please enter a number.");
+          return;
+        }
+
+        length = parseFloat(length);
+
+        // Performing the conversion
+        var convertedLength;
+        var message;
+
+        if (unit === "inch") {
+          convertedLength = length * 2.54;
+          message = length + " inch is equal to " + convertedLength + " cm.";
+        } else if (unit === "cm") {
+          convertedLength = length / 2.54;
+          message = length + " cm is equal to " + convertedLength + " inch.";
+        } else {
+          alert("Invalid unit. Please select inch or cm.");
+          return;
+        }
+
+        // Displaying the result
+        alert(message);
+      }
+    </script>
+
+    <h3>Length Converter Using Bootstrap Template</h3>
+    <h3>------------------------------------------------------</h3>
+    <h4>This program converts from inch to centimeter and vice versa</h4>
+    <h4>-------------------------------------------------------------</h4>
+    <h5>Please click Convert button to perform length conversion</h5>
+    <h5>-------------------------------------------------------------</h5>
+
+    <div class="center-wrapper">
+      <table>
+        <tr>
+          <td><input onclick="convertLength()" name="btnConvert" id="btnConvert" value="Convert!" type="button"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="footer">
+    <p>041073915 || Rian Olson || Olso0044@algonquinlive.com</p>
+  </div>
+</body>
+</html>
